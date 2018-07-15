@@ -2,6 +2,7 @@ package org.exiledkingcc.java.cfgs;
 
 import org.exiledkingcc.java.cfgs.source.ClassPathSource;
 import org.exiledkingcc.java.cfgs.source.FileSystemSource;
+import org.exiledkingcc.java.cfgs.source.HttpSource;
 
 import java.util.HashMap;
 
@@ -31,6 +32,8 @@ public class ConfigSourceFactory {
             return new ClassPathSource();
         } else if (scheme.equals("file")) {
             return new FileSystemSource(path);
+        } else if (scheme.endsWith("http") || scheme.equals("https")) {
+            return new HttpSource(path);
         }
         return null;
     }

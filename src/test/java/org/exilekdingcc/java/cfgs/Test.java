@@ -108,7 +108,7 @@ public class Test {
 
     public static void main(String args[]) {
         ConfigManager configManager = ConfigManager.INSTANCE;
-        configManager.registerDefaultSource("file://src/test/resources/");
+        configManager.registerDefaultSource("http://localhost:8000");
         configManager.registerConfig(AppConfig.class);
         AppConfig appConfig = configManager.getConfig(AppConfig.class);
         System.out.println(appConfig.toString());
