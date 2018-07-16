@@ -3,6 +3,7 @@ package org.exiledkingcc.java.cfgs;
 import org.exiledkingcc.java.cfgs.source.ClassPathSource;
 import org.exiledkingcc.java.cfgs.source.FileSystemSource;
 import org.exiledkingcc.java.cfgs.source.HttpSource;
+import org.exiledkingcc.java.cfgs.source.ZookeeperSource;
 
 import java.util.HashMap;
 
@@ -34,6 +35,8 @@ public class ConfigSourceFactory {
             return new FileSystemSource(path);
         } else if (scheme.endsWith("http") || scheme.equals("https")) {
             return new HttpSource(path);
+        } else if (scheme.endsWith("zk")) {
+            return new ZookeeperSource(path);
         }
         return null;
     }

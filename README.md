@@ -15,7 +15,7 @@ java config lib supporting for multiple sources and formats
 - `classpath`：固定为`cp://`
 - `filesystem`：指向文件夹，`file://<path to the configs dir>`
 - `http`：http的url，`http(s)://<base url of the configs>`
-- `zookeeper`(TODO)
+- `zookeeper`：path形式为：`zk://[user:pass]@<zk connect string>/<chroot path>`
 - `etcd`(TODO)
 
 ## 配置格式：
