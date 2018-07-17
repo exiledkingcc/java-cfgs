@@ -1,5 +1,6 @@
 package org.exiledkingcc.java.cfgs;
 
+import org.exiledkingcc.java.cfgs.format.JsonFormat;
 import org.exiledkingcc.java.cfgs.format.PropertiesFormat;
 
 import java.util.HashMap;
@@ -15,6 +16,8 @@ public class ConfigFormatFactory {
         ConfigFormat configFormat = null;
         if (name.endsWith(".properties")) {
             configFormat = new PropertiesFormat();
+        } else if (name.endsWith(".json")) {
+            configFormat = new JsonFormat();
         }
         if (configFormat != null) {
             this.configFormatMap.put(name, configFormat);

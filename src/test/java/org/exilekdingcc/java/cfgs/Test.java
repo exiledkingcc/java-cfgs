@@ -68,7 +68,7 @@ public class Test {
         }
     }
 
-    @ConfigItem(name = "app.properties")
+    @ConfigItem(name = "app.json")
     public static class AppConfig {
 
         @ConfigKey(key = "app_name")

@@ -165,6 +165,8 @@ public enum ConfigManager {
                 return value;
             } else if (value instanceof String) {
                 return Integer.parseInt((String) value);
+            } else if (value instanceof Number) {
+                return ((Number)value).intValue();
             }
             throw new RuntimeException("Value <" + value + "> can NOT cast to Integer");
         }
@@ -174,6 +176,8 @@ public enum ConfigManager {
                 return value;
             } else if (value instanceof String) {
                 return Float.parseFloat((String)value);
+            } else if (value instanceof Number) {
+                return ((Number)value).floatValue();
             }
             throw new RuntimeException("Value <" + value + "> can NOT cast to Float");
         }

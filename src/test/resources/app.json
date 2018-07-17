@@ -1,0 +1,46 @@
+{
+  "app_name": "appname",
+  "debug": true,
+  "num": 111,
+  "ratio": 0.22,
+  "mysql": {
+    "addr": "jdbc:mysql://192.168.1.2:3306/database",
+    "driver": "com.mysql.jdbc.Driver",
+    "user": "mysql_user",
+    "pass": "mysql_paas"
+  },
+  "dbs": {
+    "mongo_x": {
+      "addr": "192.168.1.1",
+      "port": 12710,
+      "auth_db": "xxdb",
+      "user": "xx_user",
+      "pass": "xx_pass"
+    },
+    "mongo_y": {
+      "addr": "192.168.1.2",
+      "port": 12720,
+      "auth_db": "yydb",
+      "user": "yy_user",
+      "pass": "yy_pass"
+    }
+  },
+  "users": [
+    {
+      "id": 1,
+      "name": "u1",
+      "info": {
+        "email": "u1@u1.com",
+        "age": 11
+      }
+    },
+    {
+      "id": 2,
+      "name": "u2",
+      "info": {
+        "email": "u2@u2.com",
+        "age": 22
+      }
+    }
+  ]
+}

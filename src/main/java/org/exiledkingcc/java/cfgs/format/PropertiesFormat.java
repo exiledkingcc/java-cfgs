@@ -25,7 +25,7 @@ public class PropertiesFormat implements ConfigFormat {
         return kv;
     }
 
-    private HashMap<String, Object> translate(Map<String, Object> kv) {
+    private static HashMap<String, Object> translate(Map<String, Object> kv) {
         HashMap<String, Object> hashMap = new HashMap<>();
         for (String key: kv.keySet()) {
             Object value = kv.get(key);
@@ -48,7 +48,7 @@ public class PropertiesFormat implements ConfigFormat {
             Object obj = entry.getValue();
             if (obj instanceof Map) {
                 Map<String, Object> mm = (Map<String, Object>) obj;
-                mm = this.translate((Map<String, Object>) obj);
+                mm = translate((Map<String, Object>) obj);
                 boolean isList = false;
                 boolean notList = false;
                 for (String k: mm.keySet()) {
@@ -72,7 +72,7 @@ public class PropertiesFormat implements ConfigFormat {
         return hashMap;
     }
 
-    private List<Object> mapToList(Map<String, Object> map) {
+    private static List<Object> mapToList(Map<String, Object> map) {
         ArrayList<Object> arrayList = new ArrayList<>();
         for (String key: map.keySet()) {
             assert key.charAt(0) == '$';

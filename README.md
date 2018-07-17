@@ -22,7 +22,7 @@ java config lib supporting for multiple sources and formats
 ## 配置格式：
 支持：
 - `properties`(done)
-- `json`(todo)
+- `json`(done)
 - `yaml`(maybe)
 
 最终配置会被映射到配置类，配置类支持的类型：
