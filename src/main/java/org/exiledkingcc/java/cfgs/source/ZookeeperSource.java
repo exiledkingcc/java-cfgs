@@ -40,7 +40,7 @@ public class ZookeeperSource implements ConfigSource {
             byte[] data = this.zooKeeper.getData("/" + name, true, null);
             return new ByteArrayInputStream(data);
         } catch (Exception e) {
-            throw  new RuntimeException("Can NOT get config for <" + name + "> from zookeeper", e);
+            throw new RuntimeException("Can NOT get config for <" + name + "> from zookeeper", e);
         }
     }
 }

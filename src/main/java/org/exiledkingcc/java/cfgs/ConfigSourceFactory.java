@@ -1,9 +1,6 @@
 package org.exiledkingcc.java.cfgs;
 
-import org.exiledkingcc.java.cfgs.source.ClassPathSource;
-import org.exiledkingcc.java.cfgs.source.FileSystemSource;
-import org.exiledkingcc.java.cfgs.source.HttpSource;
-import org.exiledkingcc.java.cfgs.source.ZookeeperSource;
+import org.exiledkingcc.java.cfgs.source.*;
 
 import java.util.HashMap;
 
@@ -37,6 +34,8 @@ public class ConfigSourceFactory {
             return new HttpSource(path);
         } else if (scheme.endsWith("zk")) {
             return new ZookeeperSource(path);
+        } else if (scheme.endsWith("etcd")) {
+            return new EtcdSource(path);
         }
         return null;
     }
